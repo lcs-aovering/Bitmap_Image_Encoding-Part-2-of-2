@@ -32,6 +32,9 @@ print(encodedBitmap)
 var x = 0
 for character in encodedBitmap {
     
+    // look at character variable contents
+    character
+    
     // Decide what colour of square to draw
     if character == "0" {
         canvas.fillColor = Color.black
