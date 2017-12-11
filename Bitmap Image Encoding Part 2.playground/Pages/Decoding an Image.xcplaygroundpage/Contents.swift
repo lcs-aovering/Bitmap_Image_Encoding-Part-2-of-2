@@ -20,16 +20,34 @@ import PlaygroundSupport
 
 // Copy your encoded image string here...
 let encodedBitmap = """
-1,3,1
-4,1
-1,4
-0,1,3,1
-0,1,3,1
-1,4
+b9,5,b6
+b8,1,5,1,b5
+b7,1,7,1,b4
+b4,3,9,1,b3
+b3,1,4,1,4,1,1,2,b3
+b1,2,5,1,3,1,1,4,b2
+b1,2,9,1,1,4,b2
+b2,1,9,1,1,4,b2
+b3,1,8,1,1,4,b2
+b4,2,6,1,1,4,b2
+b6,3,2,1,b1,1,1,2,b3
+b8,r3,b3,2,b4
+b7,1,3,1,b8
+b6,1,2,1,1,1,b8
+b1,2,b3,1,2,1,1,1,b8
+b1,1,1,1,b1,1,3,1,2,1,b7
+b1,1,1,1,b1,1,3,1,2,1,b7
+b1,1,2,2,4,2,b8
+b1,1,4,1,4,2,b7
+b1,1,2,2,b1,1,5,1,b6
+b1,3,b4,1,1,3,b7
+b6,2,3,1,b8
+b5,1,6,1,b7
+b5,8,b7
 """
 
 // Make a canvas
-let canvas = Canvas(width: 402, height: 402)
+let canvas = Canvas(width: 402, height: 482)
 
 // Make a grid
 // NOTE: The code that builds the grid was tucked away in something called a *function* to keep things tidy. We'll learn about functions later.
@@ -75,6 +93,14 @@ for character in encodedBitmap {
             }
 
         }
+    
+        
+    } else if character == "b" {
+        //we want the color to be the color of the sky for every value with b in front
+        canvas.fillColor = Color.init(hue: 200, saturation: 90, brightness: 70, alpha: 100)
+    } else if character == "r" {
+        //we want the color to be the color of the sky for every value with b in front
+        canvas.fillColor = Color.init(hue: 0, saturation: 100, brightness: 100, alpha: 100)
         
     } else if character == "\n" {
         
@@ -116,8 +142,8 @@ for character in encodedBitmap {
  Write your ideas in the code comment below.
  */
 
-// I notice that...
-// I know this because...
+// I notice that once i change the numbers to match those on my plaaning, my image does indeed show up
+// I know this because I can see the results match my initial drawing 
 
 /*:
  ## Extension
